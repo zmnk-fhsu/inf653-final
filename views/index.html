@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>INF653 Final API</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.5;
+      padding: 1rem;
+    }
+    table {
+      inline-size: 100%;
+      border-collapse: collapse;
+    }
+    th {
+      text-align: start;
+    }
+    th, td {
+      vertical-align: top;
+      padding-block: 0.25rem;
+    }
+    thead tr:first-child th {
+      border-block-start: 2px solid currentColor;
+    }
+    thead tr:last-child th {
+      border-block-end: 1px solid currentColor;
+    }
+    tbody tr:last-child td {
+      border-bottom: 2px solid currentColor;
+    }
+    caption {
+      caption-side: bottom;
+      margin: 0.5rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>INF653 Final REST API</h1>
+  <table>
+    <caption>API Endpoint Reference</caption>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Endpoint</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="9">GET</td>
+        <td>/states/</td>
+        <td>All state data returned</td>
+      </tr>
+      <tr>
+        <td>/states/?contig=true</td>
+        <td>All state data for contiguous states</td>
+      </tr>
+      <tr>
+        <td>/states/?contig=false</td>
+        <td>All state data for non-contiguous states</td>
+      </tr>
+      <tr>
+        <td>/states/:state</td>
+        <td>All data for the state URL parameter</td>
+      </tr>
+      <tr>
+        <td>/states/:state/capital</td>
+        <td>{ 'state': stateName, 'capital': capitalName }</td>
+      </tr>
+      <tr>
+        <td>/states/:state/nickname</td>
+        <td>{ 'state': stateName, 'nickname': nickname }</td>
+      </tr>
+      <tr>
+        <td>/states/:state/population</td>
+        <td>{ 'state': stateName, 'population': population }</td>
+      </tr>
+      <tr>
+        <td>/states/:state/admission</td>
+        <td>{ 'state': stateName, 'admitted': admissionDate }</td>
+      </tr>
+      <tr>
+        <td>/states/:state/funfact</td>
+        <td>A random fun fact for the state URL parameter</td>
+      </tr>
+      <tr>
+        <td>POST</td>
+        <td>/states/:state/funfact</td>
+        <td>Add an array of new fun facts</td>
+      </tr>
+      <tr>
+        <td>PATCH</td>
+        <td>/states/:state/funfact</td>
+        <td>Update a fun fact using a 1-based index</td>
+      </tr>
+      <tr>
+        <td>DELETE</td>
+        <td>/states/:state/funfact</td>
+        <td>Remove a fact using a 1-based index</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
